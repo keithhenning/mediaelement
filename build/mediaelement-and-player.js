@@ -5227,12 +5227,10 @@ if (typeof jQuery != 'undefined') {
 
 				t.slides.entries.imgs[index] = img = $('<img src="' + url + '">')
 						.on('load', function() {
+							t.slidesContainer.children(':visible').hide();
 							img.appendTo(t.slidesContainer)
 								.hide()
 								.fadeIn()
-								.siblings(':visible')
-									.fadeOut();
-
 						});
 
 			} else {
@@ -5243,7 +5241,7 @@ if (typeof jQuery != 'undefined') {
 
 					img.fadeIn()
 						.siblings(':visible')
-							.fadeOut();
+							.hide();
 				}
 			}
 
